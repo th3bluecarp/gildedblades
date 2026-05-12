@@ -968,6 +968,118 @@ section { padding: 8rem 3rem; position: relative; }
 .form-success p { font-size: 1.05rem; color: var(--ash); font-style: italic; }
 
 /* ═══════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════ */
+footer {
+  padding: 5rem 3rem 2.5rem;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(196,39,46,0.06) 0%, transparent 60%),
+    var(--black);
+  border-top: 1px solid rgba(196,39,46,0.12);
+}
+
+.footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.footer-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--crimson);
+}
+
+.footer-brand-mark .footer-logo {
+  width: 56px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(196,39,46,0.35));
+}
+
+.footer-brand-mark span {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.footer-tagline {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ash);
+  max-width: 480px;
+  margin: 0;
+}
+
+.footer-merch-cta {
+  display: inline-block;
+  padding: 0.9rem 2.4rem;
+  margin-top: 0.5rem;
+  background: transparent;
+  color: var(--crimson);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--crimson-deep);
+  transition: all 0.3s;
+}
+
+.footer-merch-cta:hover {
+  border-color: var(--crimson);
+  background: rgba(196,39,46,0.06);
+  box-shadow: 0 0 20px rgba(196,39,46,0.2);
+}
+
+.footer-divider {
+  width: 100%;
+  max-width: 480px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(196,39,46,0.3), transparent);
+  margin: 1rem 0;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-links a {
+  color: var(--bone);
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.social-links a:hover { color: var(--crimson); }
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: var(--ash);
+  opacity: 0.55;
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════ */
 @media (max-width: 1024px) {
@@ -988,6 +1100,7 @@ section { padding: 8rem 3rem; position: relative; }
   .form-grid { grid-template-columns: 1fr; }
   .voucher-perks { gap: 1.5rem; }
   .hero-bg::before { background-attachment: scroll; }
+  footer { padding: 4rem 1.5rem 2rem; }
 }
 </style>
 </head>
@@ -1269,6 +1382,27 @@ section { padding: 8rem 3rem; position: relative; }
     </div>
   </div>
 </section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-inner">
+    <a href="#home" class="footer-brand-mark">
+      <img src="assets/logo.png" alt="The Gilded Blades" class="footer-logo">
+      <span>Gilded Blades</span>
+    </a>
+    <p class="footer-tagline">LA's women's armored combat team — forging strength, skill, and sisterhood on the field of steel.</p>
+
+    <a href="https://www.etsy.com/shop/GoldenKnightsDesign" target="_blank" class="footer-merch-cta">Shop the Armory</a>
+
+    <div class="footer-divider"></div>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/losangelesgildedblades/" target="_blank">Instagram</a>
+    </div>
+
+    <span class="footer-copy">© 2025 The Gilded Blades · LA Golden Knights. All Rights Reserved.</span>
+  </div>
+</footer>
 
 <!-- ═══════════ JAVASCRIPT ═══════════ -->
 <script>
