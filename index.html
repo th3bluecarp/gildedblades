@@ -278,17 +278,30 @@ nav.scrolled {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 40% 40%, rgba(196,39,46,0.08) 0%, transparent 55%),
-    radial-gradient(ellipse at 60% 60%, rgba(212,168,67,0.04) 0%, transparent 50%),
-    linear-gradient(180deg, var(--black) 0%, var(--black-warm) 50%, var(--black) 100%);
+  background: var(--black);
+  overflow: hidden;
 }
 
 .hero-bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(196,39,46,0.01) 2px, rgba(196,39,46,0.01) 3px);
+  background-image: url('assets/team.webp');
+  background-size: cover;
+  background-position: center 75%;
+  background-attachment: fixed;
+  filter: grayscale(100%) contrast(1.05) brightness(0.55);
+  z-index: 0;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(10,8,8,0) 0%, rgba(10,8,8,0.55) 75%),
+    linear-gradient(180deg, rgba(10,8,8,0.7) 0%, rgba(10,8,8,0.35) 35%, rgba(10,8,8,0.55) 70%, rgba(10,8,8,0.95) 100%);
+  z-index: 1;
 }
 
 /* Decorative heraldic border */
@@ -508,6 +521,23 @@ section { padding: 8rem 3rem; position: relative; }
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.showcase-crest {
+  background:
+    radial-gradient(ellipse at center, rgba(196,39,46,0.08) 0%, transparent 65%),
+    var(--black-warm);
+}
+
+.showcase-crest .showcase-logo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 3rem;
+  filter: drop-shadow(0 0 40px rgba(196,39,46,0.35));
+  z-index: 1;
 }
 
 .image-showcase .placeholder span {
@@ -957,6 +987,7 @@ section { padding: 8rem 3rem; position: relative; }
   .btn-primary, .btn-secondary { width: 100%; max-width: 300px; text-align: center; }
   .form-grid { grid-template-columns: 1fr; }
   .voucher-perks { gap: 1.5rem; }
+  .hero-bg::before { background-attachment: scroll; }
 }
 </style>
 </head>
@@ -1005,8 +1036,8 @@ section { padding: 8rem 3rem; position: relative; }
     <h1>The <span class="red">Gilded</span><br>Blades</h1>
     <p class="hero-sub">LA's women's armored combat team — forging strength, skill, and sisterhood on the field of steel.</p>
     <div class="hero-actions">
-      <a href="#join" class="btn-primary">Join the Team</a>
       <a href="#sport" class="btn-secondary">Discover the Sport</a>
+      <a href="#join" class="btn-primary">Join the Team</a>
     </div>
   </div>
   <div class="scroll-indicator">
@@ -1025,8 +1056,8 @@ section { padding: 8rem 3rem; position: relative; }
       <p>Our weekly training sessions cover everything from fundamental striking and pell work to advanced buhurt tactics and team formations. Loaner soft kit is available while you get started — most fighters use ours for the first couple months before transitioning to their own. Members are expected to build out their own soft kit and armor over time, and we'll guide you through what to buy and where.</p>
       <a href="#join" class="btn-secondary" style="margin-top:1rem;">Start Training</a>
     </div>
-    <div class="image-showcase">
-      <img src="assets/team.webp" alt="The Gilded Blades team" class="team-photo">
+    <div class="image-showcase showcase-crest">
+      <img src="assets/logo.png" alt="The Gilded Blades crest" class="showcase-logo">
       <div class="accent-offset"></div>
     </div>
   </div>
